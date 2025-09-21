@@ -15,7 +15,7 @@ COPY email-writer/src ./src
 RUN ./mvnw -B -DskipTests clean package
 
 # Stage 2 — Runtime image with Temurin JDK 23
-FROM eclipse-temurin:23-jdk-jammy
+FROM eclipse-temurin:23
 WORKDIR /app
 
 # Copy built JAR
