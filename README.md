@@ -21,11 +21,29 @@ Replai solves this problem by:
 - Making replies available **anywhere** – Web, Mobile, and Gmail.  
 
 ---
+## 🏗️ Architecture  
 
-- **Flutter (Web + Mobile):** User interface for generating and viewing replies.  
-- **Spring Boot Backend:** Handles API requests, integrates with Gemini API, and manages business logic.  
-- **Gemini API:** AI model that generates the reply text.  
-- **Chrome Extension:** Lightweight front-end to inject AI replies directly in Gmail.  
+Replai follows a modular architecture combining **Frontend (Flutter Web + Mobile, Chrome Extension)**, **Backend (Spring Boot)**, and **AI (Gemini API)** to deliver seamless email reply generation.  
+
+### 🔄 System Flow  
+![Architecture Diagram](screenshots/architecture.png)  
+
+- **User** → Inputs email text & selects tone  
+- **Flutter App / Chrome Extension** → Sends request to backend  
+- **Spring Boot Backend** → Handles logic and forwards to Gemini API  
+- **Gemini API** → Generates AI-powered reply  
+- **Backend** → Sends reply back to frontend  
+- **User** → Views or directly inserts reply into Gmail
+
+## 📂 Project Structure
+```bash
+Replai/
+├── email-writer/               # Spring Boot server
+├── email_writer_flutter/       # Flutter Web + Mobile app
+├── email-writer-extention/     # Chrome extension
+├── screenshots/                # Previews
+└── README.md                   # Documentation
+```
 
 ---
 
