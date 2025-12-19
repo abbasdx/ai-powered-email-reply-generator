@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "*")
 public class EmailGeneratorController {
 
-    @GetMapping("/hello")
-    public String hello() {
-        return "Hello, There!";
-    }
-
     private final EmailGeneratorService emailGeneratorService;
+
+    @GetMapping
+    public String home() {
+        return "Email Reply Generator API is running...";
+    }
 
     @PostMapping("/generate")
     public ResponseEntity<String> generateEmail(@RequestBody EmailRequest emailRequest) {
